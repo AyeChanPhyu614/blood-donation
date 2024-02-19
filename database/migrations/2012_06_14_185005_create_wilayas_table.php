@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('wilayas', function (Blueprint $table) {
+        Schema::create('regions', function (Blueprint $table) {
             $table->tinyInteger('id')->primary();
             $table->tinyText('name');
             $table->tinyText('arName');
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('wilayas');
+        Schema::dropIfExists('regions');
     }
 };

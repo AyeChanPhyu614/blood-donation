@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('dairas', function (Blueprint $table) {
+        Schema::create('townships', function (Blueprint $table) {
             $table->id();
             $table->tinyText('name');
             $table->tinyText('arName');
 
-            $table->tinyInteger('wilaya_id');
-            $table->foreign('wilaya_id')->references('id')->on('wilayas');
+            $table->tinyInteger('region_id');
+            $table->foreign('region_id')->references('id')->on('regions');
         });
     }
 
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dairas');
+        Schema::dropIfExists('townships');
     }
 };

@@ -16,8 +16,8 @@ class UserSeeder extends Seeder
             'readyToGive' => true,
             // 'name' => 'test',
             'password' => '$2y$10$RN5Qk1.fTvufax1KNDyKiuCgwrtjWWyB2V6cRXJaWBj4gys1msS3e',
-            'wilaya_id' => 1,
-            'daira_id' => 1,
+            'region_id' => 1,
+            'township_id' => 1,
             'blood_group_id' => 6,
        ],
     ];

@@ -9,7 +9,10 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class Wilaya extends Model
 {
+    protected $table = 'regions';
+
     use HasFactory;
+
 
     public $timestamps = false;
 
@@ -34,7 +37,7 @@ class Wilaya extends Model
     protected function name(): Attribute
     {
         return Attribute::make(
-            get: fn ($value) => LaravelLocalization::getCurrentLocale() === 'ar' ? $this->arName : $value,
+            get: fn($value) => LaravelLocalization::getCurrentLocale() === 'ar' ? $this->arName : $value,
         );
     }
 }

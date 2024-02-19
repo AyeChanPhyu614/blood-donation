@@ -11,6 +11,8 @@ class Daira extends Model
 {
     use HasFactory;
 
+    protected $table = 'townships';
+    
     public $timestamps = false;
 
     protected $fillable = [
@@ -27,7 +29,7 @@ class Daira extends Model
     protected function name(): Attribute
     {
         return Attribute::make(
-            get: fn ($value) => LaravelLocalization::getCurrentLocale() === 'ar' ? $this->arName : $value,
+            get: fn($value) => LaravelLocalization::getCurrentLocale() === 'ar' ? $this->arName : $value,
         );
     }
 }

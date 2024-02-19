@@ -23,10 +23,10 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
 
-            $table->tinyInteger('wilaya_id');
-            $table->foreign('wilaya_id')->references('id')->on('wilayas');
+            $table->tinyInteger('region_id');
+            $table->foreign('region_id')->references('id')->on('regions');
 
-            $table->foreignId('daira_id')->constrained();
+            $table->foreignId('township_id')->constrained();
             $table->foreignId('blood_group_id')->constrained();
         });
     }
