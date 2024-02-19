@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             BloodGroupSeeder::class,
             WilayaSeeder::class,
             DairaSeeder::class,
+            UserSeeder::class,
         ]);
     }
 }
