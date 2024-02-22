@@ -24,7 +24,7 @@ export default defineConfig({
 
             'resources/js/app.js',
             'resources/js/donorsPage.js',
-            'resources/js/gettingDairas.js',
+            'resources/js/gettingTownships.js',
             'resources/js/tsPracticles.js',
             'resources/js/tsPracticlesEngine.js',
             'resources/js/userDashboard.js',

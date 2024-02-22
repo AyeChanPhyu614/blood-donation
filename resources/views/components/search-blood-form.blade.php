@@ -39,13 +39,13 @@
                 </div>
 
                 <div class="w-100">
-                    <select name="daira" id="dairaSelect" class="form-select form-select-lg" disabled>
-                        <option selected hidden style="display:none" value="">{{ __('homePage.daira') }}
+                    <select name="township" id="townshipSelect" class="form-select form-select-lg" disabled>
+                        <option selected hidden style="display:none" value="">{{ __('homePage.township') }}
                         </option>
                     </select>
 
                     <div class="invalid-feedback">
-                        {{ __('homePage.dairaValidation') }}
+                        {{ __('homePage.townshipValidation') }}
                     </div>
                 </div>
 

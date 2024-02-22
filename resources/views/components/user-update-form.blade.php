@@ -39,12 +39,12 @@
 
 
         <div>
-            <label for="dairaSelect" class="form-label mt-3">{{ __('registerPage.daira') }}</label>
-            <select data-validator-func="dairaValidator" name="daira" id="dairaSelect" class="form-select" disabled
+            <label for="townshipSelect" class="form-label mt-3">{{ __('registerPage.township') }}</label>
+            <select data-validator-func="townshipValidator" name="township" id="townshipSelect" class="form-select" disabled
                 required>
-                <option value="" selected disabled>{{ __('registerPage.daira') }}</option>
+                <option value="" selected disabled>{{ __('registerPage.township') }}</option>
             </select>
-            <div class="invalid-feedback">{{ __('registerPage.dairaValidation') }}!</div>
+            <div class="invalid-feedback">{{ __('registerPage.townshipValidation') }}!</div>
         </div>
 
         <div>

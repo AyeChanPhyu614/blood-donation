@@ -21,9 +21,9 @@ return [
     'findDonors' => 'إبحث عن المتبرعين بالدم في منطقتك',
     'bloodGroup' => 'فصيلة الدم',
     'region' => 'الولاية',
-    'daira' => 'الدائرة',
+    'township' => 'الدائرة',
     'bloodGroupValidation' => 'الرجاء اختيار فصيلة الدم.',
     'regionValidation' => 'الرجاء اختيار ولاية.',
-    'dairaValidation' => 'الرجاء اختيار دائرة.',
+    'townshipValidation' => 'الرجاء اختيار دائرة.',
     'pageDescription' => 'منصة جزائرية تساعد المحتاجين إلى الدم في العثور على المتبرعين في منطقتهم',
 ];

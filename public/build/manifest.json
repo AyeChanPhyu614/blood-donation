@@ -12,9 +12,9 @@
     "src": "resources/js/donorsPage.js",
     "isEntry": true
   },
-  "resources/js/gettingDairas.js": {
-    "file": "assets/gettingDairas.549e3cbc.js",
-    "src": "resources/js/gettingDairas.js",
+  "resources/js/gettingTownships.js": {
+    "file": "assets/gettingTownships.549e3cbc.js",
+    "src": "resources/js/gettingTownships.js",
     "isEntry": true
   },
   "resources/js/tsPracticles.js": {

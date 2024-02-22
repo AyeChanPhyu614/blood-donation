@@ -18,10 +18,10 @@
 
     {{--Passing data to JS files--}}
     <div class="visually-hidden" id="userRegionCode">{{ Auth::user()->region_id }}</div>
-    <div class="visually-hidden" id="userDairaCode">{{ Auth::user()->daira_id }}</div>
+    <div class="visually-hidden" id="userTownshipCode">{{ Auth::user()->township_id }}</div>
     <div class="visually-hidden" id="userIsReadyToGive">{{ Auth::user()->readyToGive }}</div>
 @endsection
 
 @section('beforeBodyEnd')
-    @vite(['resources/js/userDashboard.js', 'resources/js/gettingDairas.js',])
+    @vite(['resources/js/userDashboard.js', 'resources/js/gettingTownships.js',])
 @endsection

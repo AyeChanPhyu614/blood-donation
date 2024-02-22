@@ -11,7 +11,7 @@
 return [
     'title' => ':websiteTitle | Inscription en tant que donneur',
     'region' => 'Region',
-    'daira' => 'Daira',
+    'township' => 'Township',
     'phoneNumber' => 'Numéro de téléphone',
     'bloodGroup' => 'Groupe sanguin',
     'email' => 'Email',
@@ -21,7 +21,7 @@ return [
     'alreadyMember' => 'Vous avez déjà un compte ?',
     'login' => 'se connecter',
     'regionValidation' => 'Veuillez choisir une Region!',
-    'dairaValidation' => 'Veuillez choisir une Daira!',
+    'townshipValidation' => 'Veuillez choisir une Township!',
     'phoneNumberValidation' => "S'il vous plaît entrez un numéro valid!",
     'bloodGroupValidation' => 'Veuillez choisir votre group sanguin!',
     'emailValidation' => "S'il vous plaît entrez un email valid!",

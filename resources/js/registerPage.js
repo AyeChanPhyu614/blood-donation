@@ -1,6 +1,6 @@
 const theForm = document.forms[0];
 const region = document.getElementById("regionSelect");
-const daira = document.getElementById("dairaSelect");
+const township = document.getElementById("townshipSelect");
 const phone = document.getElementById("id_phone");
 const bloodGroup = document.getElementById("id_blood_group");
 const email = document.getElementById("id_email");
@@ -10,7 +10,7 @@ const passwordConfirmation = document.getElementById("id_confirm_password");
 const [html] = document.getElementsByTagName("html")
 const lang = html.getAttribute("lang");
 
-const allFields = [region, daira, phone, bloodGroup, email, password, passwordConfirmation]
+const allFields = [region, township, phone, bloodGroup, email, password, passwordConfirmation]
 
 function regionValidator(){
     if (region.options[region.selectedIndex].text === "Region" || region.options[region.selectedIndex].text === "الولاية"){
@@ -22,12 +22,12 @@ function regionValidator(){
     }
 }
 
-function dairaValidator(){
-    if (daira.options[daira.selectedIndex].text === "Daira" || daira.options[daira.selectedIndex].text === "الدائرة"){
-        daira.classList.add('is-invalid');
+function townshipValidator(){
+    if (township.options[township.selectedIndex].text === "Township" || township.options[township.selectedIndex].text === "الدائرة"){
+        township.classList.add('is-invalid');
         return false;
     } else{
-        daira.classList.remove('is-invalid');
+        township.classList.remove('is-invalid');
         return true;
     }
 }
@@ -84,7 +84,7 @@ function passwordConfirmationValidator(){
 
 function signUpFormValidator(){
     if (regionValidator()){
-        if(dairaValidator()){
+        if(townshipValidator()){
             if(phoneValidator()){
                 if(bloodGroupValidator()){
                     if(emailValidator()){
@@ -101,7 +101,7 @@ function signUpFormValidator(){
 }
 
 region.addEventListener('input', regionValidator)
-daira.addEventListener('input', dairaValidator)
+township.addEventListener('input', townshipValidator)
 phone.addEventListener('input', phoneValidator)
 bloodGroup.addEventListener('input', bloodGroupValidator)
 email.addEventListener('input', emailValidator)

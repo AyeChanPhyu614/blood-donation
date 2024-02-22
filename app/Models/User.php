@@ -17,7 +17,7 @@ class User extends Authenticatable
         'readyToGive',
         'phone',
         'region_id',
-        'daira_id',
+        'township_id',
         'blood_group_id',
     ];
 
@@ -40,9 +40,9 @@ class User extends Authenticatable
         return $this->belongsTo(Region::class);
     }
 
-    public function daira()
+    public function township()
     {
-        return $this->belongsTo(Daira::class);
+        return $this->belongsTo(Township::class);
     }
 
     public function scopeFilter($query, array $filters)
@@ -62,15 +62,15 @@ class User extends Authenticatable
             )
         );
         $query->when(
-            $filters['daira'] ?? false,
-            fn ($query, $daira) => $query->whereHas(
-                'daira',
-                fn ($query) => $query->where('id', $daira)
+            $filters['township'] ?? false,
+            fn ($query, $township) => $query->whereHas(
+                'township',
+                fn ($query) => $query->where('id', $township)
             )
         );
     }
 
-    public static function getOtherDonorsCanDonateTo($bloodGroupId, $region = null, $daira = null)
+    public static function getOtherDonorsCanDonateTo($bloodGroupId, $region = null, $township = null)
     {
         if (! empty(otherBloodGroupsDonorsOf($bloodGroupId))) {
             return User::with('bloodGroup')
@@ -79,19 +79,19 @@ class User extends Authenticatable
                 ->when($region, function ($q) use ($region) {
                     return $q->where('region_id', $region);
                 })
-                ->when($daira, function ($q) use ($daira) {
-                    return $q->where('daira_id', $daira);
+                ->when($township, function ($q) use ($township) {
+                    return $q->where('township_id', $township);
                 })
                 ->inRandomOrder()
                 ->paginate(10, ['*'], 'other-donors')
                 ->appends(request()->except('other-donors'));
         }
 
-        return []; // add abiliy of wilay and daira
+        return []; // add abiliy of wilay and township
     }
 
     public static function getAllReadyToGiveDonors()
     {
-        return User::with('region', 'daira', 'bloodGroup')->where('readyToGive', 1)->inRandomOrder()->paginate(10);
+        return User::with('region', 'township', 'bloodGroup')->where('readyToGive', 1)->inRandomOrder()->paginate(10);
     }
 }

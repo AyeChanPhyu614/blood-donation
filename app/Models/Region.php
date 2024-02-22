@@ -29,9 +29,9 @@ class Region extends Model
         return $this->hasMany(User::class);
     }
 
-    public function dairas()
+    public function townships()
     {
-        return $this->hasMany(Daira::class);
+        return $this->hasMany(Township::class);
     }
 
     protected function name(): Attribute

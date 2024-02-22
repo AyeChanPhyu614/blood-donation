@@ -49,7 +49,7 @@
                     {{ __('donorsPage.noDonorsMsg') }}
                 </div>
             @else
-                @if ($searchedBloodGroup or $searchedRegion or $searchedDaira)
+                @if ($searchedBloodGroup or $searchedRegion or $searchedTownship)
                     <div class="resultTitle alert alert-success text-center fs-3 w-100" role="alert">
                         @isset($searchedBloodGroup)
                             {{ __('donorsPage.donorsSearchResultText') }} <span
@@ -60,8 +60,8 @@
                             {{ __('registerPage.region') }}: <span class="text-danger fw-bold">{{ $searchedRegion }}</span>
                         @endisset
 
-                        @isset($searchedDaira)
-                            {{ ',' . __('registerPage.daira') }}: <span class="text-danger fw-bold">{{ $searchedDaira }}</span>
+                        @isset($searchedTownship)
+                            {{ ',' . __('registerPage.township') }}: <span class="text-danger fw-bold">{{ $searchedTownship }}</span>
                         @endisset
                     </div>
                 @endif
@@ -73,8 +73,8 @@
                                 <span class="text-danger fs-4"><strong class="text-dark">{{ __('registerPage.region') }}:
                                     </strong>{{ $donor->region->name }}</span>
                                 <br>
-                                <span class="text-danger fs-4"><strong class="text-dark">{{ __('registerPage.daira') }}:
-                                    </strong>{{ $donor->daira->name }}</span>
+                                <span class="text-danger fs-4"><strong class="text-dark">{{ __('registerPage.township') }}:
+                                    </strong>{{ $donor->township->name }}</span>
                             </div>
 
                             <div class="bloodGroup col-3 d-flex align-items-center">
@@ -116,8 +116,8 @@
                             <span class="text-danger fs-4"><strong class="text-dark">{{ __('registerPage.region') }}:
                                 </strong>{{ $donor->region->name }}</span>
                             <br>
-                            <span class="text-danger fs-4"><strong class="text-dark">{{ __('registerPage.daira') }}:
-                                </strong>{{ $donor->daira->name }}</span>
+                            <span class="text-danger fs-4"><strong class="text-dark">{{ __('registerPage.township') }}:
+                                </strong>{{ $donor->township->name }}</span>
                         </div>
 
                         <div class="bloodGroup col-3 d-flex align-items-center">
@@ -163,8 +163,8 @@
                     @isset($searchedRegion)
                         {{ __('registerPage.region') }}: <span class="text-danger fw-bold">{{ $searchedRegion }}</span>
                     @endisset
-                    @isset($searchedDaira)
-                        {{ ',' . __('registerPage.daira') }}: <span class="text-danger fw-bold">{{ $searchedDaira }}</span>
+                    @isset($searchedTownship)
+                        {{ ',' . __('registerPage.township') }}: <span class="text-danger fw-bold">{{ $searchedTownship }}</span>
                     @endisset
                 </div>
                 @foreach ($otherDonors as $donor)
@@ -174,8 +174,8 @@
                                 <span class="text-danger fs-4"><strong class="text-dark">{{ __('registerPage.region') }}:
                                     </strong>{{ $donor->region->name }}</span>
                                 <br>
-                                <span class="text-danger fs-4"><strong class="text-dark">{{ __('registerPage.daira') }}:
-                                    </strong>{{ $donor->daira->name }}</span>
+                                <span class="text-danger fs-4"><strong class="text-dark">{{ __('registerPage.township') }}:
+                                    </strong>{{ $donor->township->name }}</span>
                             </div>
 
                             <div class="bloodGroup col-3 d-flex align-items-center">
@@ -217,5 +217,5 @@
 @endsection
 
 @section('beforeBodyEnd')
-    @vite(['resources/js/donorsPage.js', 'resources/js/donorsSearchFormValidation.js', 'resources/js/gettingDairas.js'])
+    @vite(['resources/js/donorsPage.js', 'resources/js/donorsSearchFormValidation.js', 'resources/js/gettingTownships.js'])
 @endsection

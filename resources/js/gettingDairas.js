@@ -1,37 +1,37 @@
-const dairaSelect = document.getElementById('dairaSelect');
+const townshipSelect = document.getElementById('townshipSelect');
 const regionSelect = document.getElementById('regionSelect');
 
 const [html] = document.getElementsByTagName("html")
 const lang = html.getAttribute("lang");
 
-const getDairas = () => {
+const getTownships = () => {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            var dairas = JSON.parse(this.responseText);
+            var townships = JSON.parse(this.responseText);
 
             if(lang === 'ar'){
-                dairaSelect.innerHTML = '<option selected hidden style="display:none" value="">الدائرة</option>';
+                townshipSelect.innerHTML = '<option selected hidden style="display:none" value="">الدائرة</option>';
             } else if(lang === 'fr'){
-                dairaSelect.innerHTML = '<option selected hidden style="display:none" value="">Daira</option>';
+                townshipSelect.innerHTML = '<option selected hidden style="display:none" value="">Township</option>';
             }
 
-            dairas.forEach(element => {
+            townships.forEach(element => {
                 const option = document.createElement("option");
                 option.value = element.id;
                 option.text = element.name;
-                dairaSelect.add(option);
-                dairaSelect.removeAttribute("disabled");
+                townshipSelect.add(option);
+                townshipSelect.removeAttribute("disabled");
             });
         }
     };
     var region = regionSelect.value;
-    xhttp.open("GET",  `/${lang}/api/dairas/` + region, true);
+    xhttp.open("GET",  `/${lang}/api/townships/` + region, true);
     xhttp.send();
 }
 
 if(regionSelect.value){
-    getDairas()
+    getTownships()
 }
 
-regionSelect.addEventListener('change', getDairas);
+regionSelect.addEventListener('change', getTownships);

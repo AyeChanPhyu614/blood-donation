@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\BloodGroup;
-use App\Models\Daira;
+use App\Models\Township;
 use App\Models\Region;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
@@ -27,7 +27,7 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
             'phone' => $this->faker->unique()->numerify('##########'),
             'region_id' => Region::inRandomOrder()->first()->id,
-            'daira_id' => Daira::inRandomOrder()->first()->id,
+            'township_id' => Township::inRandomOrder()->first()->id,
             'blood_group_id' => BloodGroup::inRandomOrder()->first()->id,
         ];
     }

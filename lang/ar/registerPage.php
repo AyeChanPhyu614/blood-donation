@@ -11,7 +11,7 @@
 return [
     'title' => ':websiteTitle | التسجيل كمتبرع',
     'region' => 'الولاية',
-    'daira' => 'الدائرة',
+    'township' => 'الدائرة',
     'phoneNumber' => 'رقم الهاتف',
     'bloodGroup' => 'فصيلة الدم',
     'email' => 'الإيميل',
@@ -21,7 +21,7 @@ return [
     'alreadyMember' => 'لديك حساب ؟',
     'login' => 'تسجيل الدخول',
     'regionValidation' => 'الرجاء اختيار ولاية !',
-    'dairaValidation' => 'الرجاء اختيار دائرة !',
+    'townshipValidation' => 'الرجاء اختيار دائرة !',
     'phoneNumberValidation' => 'من فضلك أدخل رقم هاتفك الصحيح !',
     'bloodGroupValidation' => 'الرجاء اختيار فصيلة دمك !',
     'emailValidation' => 'يرجى إدخال إميلك الصحيح !',

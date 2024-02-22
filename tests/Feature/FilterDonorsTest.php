@@ -3,7 +3,7 @@
 namespace Tests\Feature;
 
 use App\Models\BloodGroup;
-use App\Models\Daira;
+use App\Models\Township;
 use App\Models\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
@@ -74,13 +74,13 @@ class FilterDonorsTest extends TestCase
     /**
      * @test
      */
-    public function it_get_all_donors_filtered_by_daira(): void
+    public function it_get_all_donors_filtered_by_township(): void
     {
         $this->withoutExceptionHandling();
-        $userOne = User::factory()->create(['daira_id' => 1]);
-        $userTwo = User::factory()->create(['daira_id' => 2]);
+        $userOne = User::factory()->create(['township_id' => 1]);
+        $userTwo = User::factory()->create(['township_id' => 2]);
 
-        $response = $this->get("/donors?daira=1");
+        $response = $this->get("/donors?township=1");
 
         $response->assertSee($userOne->phone);
         $response->assertDontSee($userTwo->phone);

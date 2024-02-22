@@ -2,12 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\Models\Daira;
+use App\Models\Township;
 use Illuminate\Database\Seeder;
 
-class DairaSeeder extends Seeder
+class TownshipSeeder extends Seeder
 {
-    private $dairas = [
+    private $townships = [
         1 => [
             'arName' => 'Insein',
             'name' => 'Insein',
@@ -37,8 +37,8 @@ class DairaSeeder extends Seeder
 
     public function run()
     {
-        array_walk($this->dairas, function ($daira, $key) {
-            Daira::create(array_merge(['id' => $key], $daira));
+        array_walk($this->townships, function ($township, $key) {
+            Township::create(array_merge(['id' => $key], $township));
         });
     }
 }

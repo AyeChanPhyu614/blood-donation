@@ -4,8 +4,8 @@ const regionSelect = document.getElementById('regionSelect')
 const userRegionCode = document.getElementById('userRegionCode')
 regionSelect.value = userRegionCode.innerText
 
-const dairaSelect = document.getElementById('dairaSelect')
-const userDairaCode = document.getElementById('userDairaCode')
+const townshipSelect = document.getElementById('townshipSelect')
+const userTownshipCode = document.getElementById('userTownshipCode')
 
 const [html] = document.getElementsByTagName("html")
 const lang = html.getAttribute("lang");
@@ -13,20 +13,20 @@ const lang = html.getAttribute("lang");
 const xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
     if (this.readyState === 4 && this.status === 200) {
-        let dairas = JSON.parse(this.responseText);
+        let townships = JSON.parse(this.responseText);
 
-        dairas.forEach(element => {
+        townships.forEach(element => {
             var option = document.createElement("option");
             option.value = element.id;
             option.text = lang === 'ar' ? element.arName : element.name;
-            dairaSelect.add(option);
-            dairaSelect.removeAttribute("disabled");
+            townshipSelect.add(option);
+            townshipSelect.removeAttribute("disabled");
         });
 
-        dairaSelect.value = userDairaCode.innerText
+        townshipSelect.value = userTownshipCode.innerText
     }
 };
-xhttp.open("GET", "/api/dairas/" + userRegionCode.innerText, true);
+xhttp.open("GET", "/api/townships/" + userRegionCode.innerText, true);
 xhttp.send();
 
 
@@ -103,7 +103,7 @@ passwordUpdateForm.addEventListener("submit", e => {
 
 // user edit form validation
 const region = document.getElementById("regionSelect");
-const daira = document.getElementById("dairaSelect");
+const township = document.getElementById("townshipSelect");
 const phone = document.getElementById("id_phone");
 const email = document.getElementById("id_email");
 const userUpdateForm = document.forms[2];
@@ -118,12 +118,12 @@ function regionValidator(){
     }
 }
 
-function dairaValidator(){
-    if (daira.options[daira.selectedIndex].text === "Daira" || daira.options[daira.selectedIndex].text === "الدائرة"){
-        daira.classList.add('is-invalid');
+function townshipValidator(){
+    if (township.options[township.selectedIndex].text === "Township" || township.options[township.selectedIndex].text === "الدائرة"){
+        township.classList.add('is-invalid');
         return false;
     } else{
-        daira.classList.remove('is-invalid');
+        township.classList.remove('is-invalid');
         return true;
     }
 }
@@ -150,7 +150,7 @@ function emailValidator(){
 
 function userEditFormValidator(){
     if (regionValidator()){
-        if(dairaValidator()){
+        if(townshipValidator()){
             if(phoneValidator()){
                 if(emailValidator()){
                     return true;
@@ -161,7 +161,7 @@ function userEditFormValidator(){
  }
 
 region.addEventListener('input', regionValidator)
-daira.addEventListener('input', dairaValidator)
+township.addEventListener('input', townshipValidator)
 phone.addEventListener('input', phoneValidator)
 email.addEventListener('input', emailValidator)
 

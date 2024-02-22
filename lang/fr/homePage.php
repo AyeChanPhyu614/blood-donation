@@ -21,9 +21,9 @@ return [
     'findDonors' => 'Trouver des donneurs de sang près de chez vous',
     'bloodGroup' => 'Groupe sanguin',
     'region' => 'Region',
-    'daira' => 'Daira',
+    'township' => 'Township',
     'bloodGroupValidation' => 'Veuillez choisir un Group Sanguin.',
     'regionValidation' => 'Veuillez choisir une Region.',
-    'dairaValidation' => 'Veuillez choisir une Daira.',
+    'townshipValidation' => 'Veuillez choisir une Township.',
     'pageDescription' => 'Une plateforme algérienne qui aide les personnes en besoin de sang à trouver des donneurs dans leur région',
 ];

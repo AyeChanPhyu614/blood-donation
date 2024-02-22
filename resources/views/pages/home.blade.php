@@ -43,7 +43,7 @@
 @section('beforeBodyEnd')
     @vite([
         'resources/js/donorsSearchFormValidation.js',
-        'resources/js/gettingDairas.js',
+        'resources/js/gettingTownships.js',
         'resources/js/tsPracticles.js',
         'resources/js/tsPracticlesEngine.js',
     ])

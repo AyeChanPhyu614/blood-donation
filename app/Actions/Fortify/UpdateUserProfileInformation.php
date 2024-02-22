@@ -29,7 +29,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             ],
             'phone' => ['required', 'numeric', 'digits:10', Rule::unique(User::class)->ignore($user->id)],
             'region' => ['required', 'exists:regions,id'],
-            'daira' => ['required', 'exists:dairas,id'],
+            'township' => ['required', 'exists:townships,id'],
         ],
             [
                 'email.unique' => __('registerPage.alreadyUsedEmail'),
@@ -44,7 +44,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
                 'email' => $input['email'],
                 'phone' => $input['phone'],
                 'region_id' => $input['region'],
-                'daira_id' => $input['daira'],
+                'township_id' => $input['township'],
                 'readyToGive' => array_key_exists('ready_to_give', $input) ? 1 : 0,
             ])->save();
         }
@@ -63,7 +63,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'email' => $input['name'],
             'phone' => $input['email'],
             'region_id' => $input['name'],
-            'daira_id' => $input['name'],
+            'township_id' => $input['name'],
             'readyToGive' => $input['ready_to_give'] === 'on' ? 1 : 0,
             'email_verified_at' => null,
         ])->save();

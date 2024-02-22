@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
-class Daira extends Model
+class Township extends Model
 {
     use HasFactory;
 
