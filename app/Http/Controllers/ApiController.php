@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Wilaya;
+use App\Models\Region;
 
 class ApiController extends Controller
 {
-    public function getDairas($wilayaCode)
+    public function getDairas($regionCode)
     {
-        return Wilaya::find($wilayaCode)->dairas;
+        return Region::find($regionCode)->dairas;
     }
 }

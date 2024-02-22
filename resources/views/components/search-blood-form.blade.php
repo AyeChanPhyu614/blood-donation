@@ -23,18 +23,18 @@
                 </div>
 
                 <div class="w-100">
-                    <select name="wilaya" id="wilayaSelect" class="form-select form-select-lg">
-                        <option selected hidden style="display:none" value="">{{ __('homePage.wilaya') }}
+                    <select name="region" id="regionSelect" class="form-select form-select-lg">
+                        <option selected hidden style="display:none" value="">{{ __('homePage.region') }}
                         </option>
-                        @foreach ($wilayas as $wilaya)
-                            <option value="{{ $wilaya->id }}" @selected(old('wilaya') == $wilaya->id)>
-                                {{ $wilaya->id . '. ' . $wilaya->name }}
+                        @foreach ($regions as $region)
+                            <option value="{{ $region->id }}" @selected(old('region') == $region->id)>
+                                {{ $region->id . '. ' . $region->name }}
                             </option>
                         @endforeach
                     </select>
 
                     <div class="invalid-feedback">
-                        {{ __('homePage.wilayaValidation') }}
+                        {{ __('homePage.regionValidation') }}
                     </div>
                 </div>
 

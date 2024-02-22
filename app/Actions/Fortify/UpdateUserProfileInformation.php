@@ -28,7 +28,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
                 Rule::unique(User::class)->ignore($user->id),
             ],
             'phone' => ['required', 'numeric', 'digits:10', Rule::unique(User::class)->ignore($user->id)],
-            'wilaya' => ['required', 'exists:wilayas,id'],
+            'region' => ['required', 'exists:regions,id'],
             'daira' => ['required', 'exists:dairas,id'],
         ],
             [
@@ -43,7 +43,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $user->forceFill([
                 'email' => $input['email'],
                 'phone' => $input['phone'],
-                'wilaya_id' => $input['wilaya'],
+                'region_id' => $input['region'],
                 'daira_id' => $input['daira'],
                 'readyToGive' => array_key_exists('ready_to_give', $input) ? 1 : 0,
             ])->save();
@@ -62,7 +62,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
         $user->forceFill([
             'email' => $input['name'],
             'phone' => $input['email'],
-            'wilaya_id' => $input['name'],
+            'region_id' => $input['name'],
             'daira_id' => $input['name'],
             'readyToGive' => $input['ready_to_give'] === 'on' ? 1 : 0,
             'email_verified_at' => null,

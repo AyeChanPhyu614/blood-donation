@@ -2,12 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\Models\Wilaya;
+use App\Models\Region;
 use Illuminate\Database\Seeder;
 
-class WilayaSeeder extends Seeder
+class RegionSeeder extends Seeder
 {
-    private $wilayas = [
+    private $regions = [
         [
             'id' => '1',
             'name' => 'Yangon',
@@ -37,8 +37,8 @@ class WilayaSeeder extends Seeder
 
     public function run()
     {
-        array_walk($this->wilayas, function ($wilaya) {
-            Wilaya::create($wilaya);
+        array_walk($this->regions, function ($region) {
+            Region::create($region);
         });
     }
 }

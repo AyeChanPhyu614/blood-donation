@@ -8,7 +8,7 @@ use App\Actions\Fortify\UpdateUserPassword;
 use App\Actions\Fortify\UpdateUserProfileInformation;
 use App\Models\BloodGroup;
 use App\Models\User;
-use App\Models\Wilaya;
+use App\Models\Region;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -65,7 +65,7 @@ class FortifyServiceProvider extends ServiceProvider
         });
 
         Fortify::registerView(function () {
-            return view('pages.auth.register', ['wilayas' => Wilaya::all(),
+            return view('pages.auth.register', ['regions' => Region::all(),
                 'bloodGroups' => BloodGroup::all(), ]);
         });
 

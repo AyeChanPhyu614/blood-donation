@@ -29,7 +29,7 @@ class CreateNewUser implements CreatesNewUsers
                 Rule::unique(User::class),
             ],
             'phone' => ['required', 'numeric', 'digits:10', Rule::unique(User::class)],
-            'wilaya' => ['required', 'exists:wilayas,id'],
+            'region' => ['required', 'exists:regions,id'],
             'daira' => ['required', 'exists:dairas,id'],
             'blood_group' => ['required', 'exists:blood_groups,id'],
             'password' => $this->passwordRules(),
@@ -43,7 +43,7 @@ class CreateNewUser implements CreatesNewUsers
         return User::create([
             'email' => $input['email'],
             'phone' => $input['phone'],
-            'wilaya_id' => $input['wilaya'],
+            'region_id' => $input['region'],
             'daira_id' => $input['daira'],
             'blood_group_id' => $input['blood_group'],
             'password' => Hash::make($input['password']),

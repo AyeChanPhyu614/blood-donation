@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use App\Models\BloodGroup;
 use App\Models\Daira;
-use App\Models\Wilaya;
+use App\Models\Region;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -26,7 +26,7 @@ class UserFactory extends Factory
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
             'phone' => $this->faker->unique()->numerify('##########'),
-            'wilaya_id' => Wilaya::inRandomOrder()->first()->id,
+            'region_id' => Region::inRandomOrder()->first()->id,
             'daira_id' => Daira::inRandomOrder()->first()->id,
             'blood_group_id' => BloodGroup::inRandomOrder()->first()->id,
         ];

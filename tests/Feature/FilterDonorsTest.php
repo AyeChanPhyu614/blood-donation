@@ -59,12 +59,12 @@ class FilterDonorsTest extends TestCase
     /**
      * @test
      */
-    public function it_get_all_donors_filtered_by_wilaya(): void
+    public function it_get_all_donors_filtered_by_region(): void
     {
-        $userOne = User::factory()->create(['wilaya_id' => '14']);
-        $userTwo = User::factory()->create(['wilaya_id' => '16']);
+        $userOne = User::factory()->create(['region_id' => '14']);
+        $userTwo = User::factory()->create(['region_id' => '16']);
 
-        $response = $this->get("/donors?wilaya=14");
+        $response = $this->get("/donors?region=14");
 
         $response->assertSee($userOne->phone);
         $response->assertDontSee($userTwo->phone);

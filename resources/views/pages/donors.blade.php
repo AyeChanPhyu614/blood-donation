@@ -49,15 +49,15 @@
                     {{ __('donorsPage.noDonorsMsg') }}
                 </div>
             @else
-                @if ($searchedBloodGroup or $searchedWilaya or $searchedDaira)
+                @if ($searchedBloodGroup or $searchedRegion or $searchedDaira)
                     <div class="resultTitle alert alert-success text-center fs-3 w-100" role="alert">
                         @isset($searchedBloodGroup)
                             {{ __('donorsPage.donorsSearchResultText') }} <span
                                 class="text-danger fw-bold">{{ $searchedBloodGroup }}</span>
                         @endisset
 
-                        @isset($searchedWilaya)
-                            {{ __('registerPage.wilaya') }}: <span class="text-danger fw-bold">{{ $searchedWilaya }}</span>
+                        @isset($searchedRegion)
+                            {{ __('registerPage.region') }}: <span class="text-danger fw-bold">{{ $searchedRegion }}</span>
                         @endisset
 
                         @isset($searchedDaira)
@@ -70,8 +70,8 @@
                     <div class="container shadow-lg donorCard d-flex flex-column">
                         <div class="donorInfo px-3 py-3 row">
                             <div class="infos col-9">
-                                <span class="text-danger fs-4"><strong class="text-dark">{{ __('registerPage.wilaya') }}:
-                                    </strong>{{ $donor->wilaya->name }}</span>
+                                <span class="text-danger fs-4"><strong class="text-dark">{{ __('registerPage.region') }}:
+                                    </strong>{{ $donor->region->name }}</span>
                                 <br>
                                 <span class="text-danger fs-4"><strong class="text-dark">{{ __('registerPage.daira') }}:
                                     </strong>{{ $donor->daira->name }}</span>
@@ -113,8 +113,8 @@
                 <div class="container shadow-lg donorCard d-flex flex-column">
                     <div class="donorInfo px-3 py-3 row">
                         <div class="infos col-9">
-                            <span class="text-danger fs-4"><strong class="text-dark">{{ __('registerPage.wilaya') }}:
-                                </strong>{{ $donor->wilaya->name }}</span>
+                            <span class="text-danger fs-4"><strong class="text-dark">{{ __('registerPage.region') }}:
+                                </strong>{{ $donor->region->name }}</span>
                             <br>
                             <span class="text-danger fs-4"><strong class="text-dark">{{ __('registerPage.daira') }}:
                                 </strong>{{ $donor->daira->name }}</span>
@@ -160,8 +160,8 @@
                 <div class="resultTitle alert alert-success text-center fs-3 w-100" role="alert">
                     {{ __('donorsPage.otherDonorsMessage') }} <span
                         class="text-danger fw-bold">{{ $searchedBloodGroup }}</span>
-                    @isset($searchedWilaya)
-                        {{ __('registerPage.wilaya') }}: <span class="text-danger fw-bold">{{ $searchedWilaya }}</span>
+                    @isset($searchedRegion)
+                        {{ __('registerPage.region') }}: <span class="text-danger fw-bold">{{ $searchedRegion }}</span>
                     @endisset
                     @isset($searchedDaira)
                         {{ ',' . __('registerPage.daira') }}: <span class="text-danger fw-bold">{{ $searchedDaira }}</span>
@@ -171,8 +171,8 @@
                     <div class="container shadow-lg donorCard d-flex flex-column">
                         <div class="donorInfo px-3 py-3 row">
                             <div class="infos col-9">
-                                <span class="text-danger fs-4"><strong class="text-dark">{{ __('registerPage.wilaya') }}:
-                                    </strong>{{ $donor->wilaya->name }}</span>
+                                <span class="text-danger fs-4"><strong class="text-dark">{{ __('registerPage.region') }}:
+                                    </strong>{{ $donor->region->name }}</span>
                                 <br>
                                 <span class="text-danger fs-4"><strong class="text-dark">{{ __('registerPage.daira') }}:
                                     </strong>{{ $donor->daira->name }}</span>

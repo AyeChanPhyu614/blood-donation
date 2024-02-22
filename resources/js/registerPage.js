@@ -1,5 +1,5 @@
 const theForm = document.forms[0];
-const wilaya = document.getElementById("wilayaSelect");
+const region = document.getElementById("regionSelect");
 const daira = document.getElementById("dairaSelect");
 const phone = document.getElementById("id_phone");
 const bloodGroup = document.getElementById("id_blood_group");
@@ -10,14 +10,14 @@ const passwordConfirmation = document.getElementById("id_confirm_password");
 const [html] = document.getElementsByTagName("html")
 const lang = html.getAttribute("lang");
 
-const allFields = [wilaya, daira, phone, bloodGroup, email, password, passwordConfirmation]
+const allFields = [region, daira, phone, bloodGroup, email, password, passwordConfirmation]
 
-function wilayaValidator(){
-    if (wilaya.options[wilaya.selectedIndex].text === "Wilaya" || wilaya.options[wilaya.selectedIndex].text === "الولاية"){
-        wilaya.classList.add('is-invalid');
+function regionValidator(){
+    if (region.options[region.selectedIndex].text === "Region" || region.options[region.selectedIndex].text === "الولاية"){
+        region.classList.add('is-invalid');
         return false;
     } else{
-        wilaya.classList.remove('is-invalid');
+        region.classList.remove('is-invalid');
         return true;
     }
 }
@@ -83,7 +83,7 @@ function passwordConfirmationValidator(){
 }
 
 function signUpFormValidator(){
-    if (wilayaValidator()){
+    if (regionValidator()){
         if(dairaValidator()){
             if(phoneValidator()){
                 if(bloodGroupValidator()){
@@ -100,7 +100,7 @@ function signUpFormValidator(){
     } else return false;
 }
 
-wilaya.addEventListener('input', wilayaValidator)
+region.addEventListener('input', regionValidator)
 daira.addEventListener('input', dairaValidator)
 phone.addEventListener('input', phoneValidator)
 bloodGroup.addEventListener('input', bloodGroupValidator)

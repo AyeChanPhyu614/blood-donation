@@ -2,18 +2,18 @@
 
 namespace App\View\Components;
 
-use App\Models\Wilaya;
+use App\Models\Region;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\View\Component;
 
 class UserUpdateForm extends Component
 {
-    public $wilayas;
+    public $regions;
 
     public function __construct()
     {
-        $this->wilayas = Cache::rememberForever('wilayas', function () {
-            return Wilaya::all();
+        $this->regions = Cache::rememberForever('regions', function () {
+            return Region::all();
         });
     }
 

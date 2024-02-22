@@ -10,7 +10,7 @@
 
 return [
     'title' => ':websiteTitle | التسجيل كمتبرع',
-    'wilaya' => 'الولاية',
+    'region' => 'الولاية',
     'daira' => 'الدائرة',
     'phoneNumber' => 'رقم الهاتف',
     'bloodGroup' => 'فصيلة الدم',
@@ -20,7 +20,7 @@ return [
     'register' => 'التسجيل',
     'alreadyMember' => 'لديك حساب ؟',
     'login' => 'تسجيل الدخول',
-    'wilayaValidation' => 'الرجاء اختيار ولاية !',
+    'regionValidation' => 'الرجاء اختيار ولاية !',
     'dairaValidation' => 'الرجاء اختيار دائرة !',
     'phoneNumberValidation' => 'من فضلك أدخل رقم هاتفك الصحيح !',
     'bloodGroupValidation' => 'الرجاء اختيار فصيلة دمك !',

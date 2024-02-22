@@ -16,7 +16,7 @@ class User extends Authenticatable
         'password',
         'readyToGive',
         'phone',
-        'wilaya_id',
+        'region_id',
         'daira_id',
         'blood_group_id',
     ];
@@ -35,9 +35,9 @@ class User extends Authenticatable
         return $this->belongsTo(BloodGroup::class);
     }
 
-    public function wilaya()
+    public function region()
     {
-        return $this->belongsTo(Wilaya::class);
+        return $this->belongsTo(Region::class);
     }
 
     public function daira()
@@ -55,10 +55,10 @@ class User extends Authenticatable
             )
         );
         $query->when(
-            $filters['wilaya'] ?? false,
-            fn ($query, $wilaya) => $query->whereHas(
-                'wilaya',
-                fn ($query) => $query->where('id', $wilaya)
+            $filters['region'] ?? false,
+            fn ($query, $region) => $query->whereHas(
+                'region',
+                fn ($query) => $query->where('id', $region)
             )
         );
         $query->when(
@@ -70,14 +70,14 @@ class User extends Authenticatable
         );
     }
 
-    public static function getOtherDonorsCanDonateTo($bloodGroupId, $wilaya = null, $daira = null)
+    public static function getOtherDonorsCanDonateTo($bloodGroupId, $region = null, $daira = null)
     {
         if (! empty(otherBloodGroupsDonorsOf($bloodGroupId))) {
             return User::with('bloodGroup')
                 ->whereIn('blood_group_id', otherBloodGroupsDonorsOf($bloodGroupId))
                 ->where('readyToGive', '=', 1)
-                ->when($wilaya, function ($q) use ($wilaya) {
-                    return $q->where('wilaya_id', $wilaya);
+                ->when($region, function ($q) use ($region) {
+                    return $q->where('region_id', $region);
                 })
                 ->when($daira, function ($q) use ($daira) {
                     return $q->where('daira_id', $daira);
@@ -92,6 +92,6 @@ class User extends Authenticatable
 
     public static function getAllReadyToGiveDonors()
     {
-        return User::with('wilaya', 'daira', 'bloodGroup')->where('readyToGive', 1)->inRandomOrder()->paginate(10);
+        return User::with('region', 'daira', 'bloodGroup')->where('readyToGive', 1)->inRandomOrder()->paginate(10);
     }
 }

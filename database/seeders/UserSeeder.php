@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
             'blood_group_id' => 6,
        ],
     ];
-    // private $wilayas = [
+    // private $regions = [
     //    [
     //        'id' => '1',
     //        'name' => 'Yangon',

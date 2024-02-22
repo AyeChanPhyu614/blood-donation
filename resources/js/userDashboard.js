@@ -1,8 +1,8 @@
 
 // form js
-const wilayaSelect = document.getElementById('wilayaSelect')
-const userWilayaCode = document.getElementById('userWilayaCode')
-wilayaSelect.value = userWilayaCode.innerText
+const regionSelect = document.getElementById('regionSelect')
+const userRegionCode = document.getElementById('userRegionCode')
+regionSelect.value = userRegionCode.innerText
 
 const dairaSelect = document.getElementById('dairaSelect')
 const userDairaCode = document.getElementById('userDairaCode')
@@ -26,7 +26,7 @@ xhttp.onreadystatechange = function() {
         dairaSelect.value = userDairaCode.innerText
     }
 };
-xhttp.open("GET", "/api/dairas/" + userWilayaCode.innerText, true);
+xhttp.open("GET", "/api/dairas/" + userRegionCode.innerText, true);
 xhttp.send();
 
 
@@ -102,18 +102,18 @@ passwordUpdateForm.addEventListener("submit", e => {
 // password edit form validation
 
 // user edit form validation
-const wilaya = document.getElementById("wilayaSelect");
+const region = document.getElementById("regionSelect");
 const daira = document.getElementById("dairaSelect");
 const phone = document.getElementById("id_phone");
 const email = document.getElementById("id_email");
 const userUpdateForm = document.forms[2];
 
-function wilayaValidator(){
-    if (wilaya.options[wilaya.selectedIndex].text === "Wilaya" || wilaya.options[wilaya.selectedIndex].text === "الولاية"){
-        wilaya.classList.add('is-invalid');
+function regionValidator(){
+    if (region.options[region.selectedIndex].text === "Region" || region.options[region.selectedIndex].text === "الولاية"){
+        region.classList.add('is-invalid');
         return false;
     } else{
-        wilaya.classList.remove('is-invalid');
+        region.classList.remove('is-invalid');
         return true;
     }
 }
@@ -149,7 +149,7 @@ function emailValidator(){
 }
 
 function userEditFormValidator(){
-    if (wilayaValidator()){
+    if (regionValidator()){
         if(dairaValidator()){
             if(phoneValidator()){
                 if(emailValidator()){
@@ -160,7 +160,7 @@ function userEditFormValidator(){
     } else return false;
  }
 
-wilaya.addEventListener('input', wilayaValidator)
+region.addEventListener('input', regionValidator)
 daira.addEventListener('input', dairaValidator)
 phone.addEventListener('input', phoneValidator)
 email.addEventListener('input', emailValidator)

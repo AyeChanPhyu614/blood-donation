@@ -1,5 +1,5 @@
 const dairaSelect = document.getElementById('dairaSelect');
-const wilayaSelect = document.getElementById('wilayaSelect');
+const regionSelect = document.getElementById('regionSelect');
 
 const [html] = document.getElementsByTagName("html")
 const lang = html.getAttribute("lang");
@@ -25,13 +25,13 @@ const getDairas = () => {
             });
         }
     };
-    var wilaya = wilayaSelect.value;
-    xhttp.open("GET",  `/${lang}/api/dairas/` + wilaya, true);
+    var region = regionSelect.value;
+    xhttp.open("GET",  `/${lang}/api/dairas/` + region, true);
     xhttp.send();
 }
 
-if(wilayaSelect.value){
+if(regionSelect.value){
     getDairas()
 }
 
-wilayaSelect.addEventListener('change', getDairas);
+regionSelect.addEventListener('change', getDairas);

@@ -20,10 +20,10 @@ return [
     'secondCtaBtn' => 'Besoin de sang',
     'findDonors' => 'Trouver des donneurs de sang près de chez vous',
     'bloodGroup' => 'Groupe sanguin',
-    'wilaya' => 'Wilaya',
+    'region' => 'Region',
     'daira' => 'Daira',
     'bloodGroupValidation' => 'Veuillez choisir un Group Sanguin.',
-    'wilayaValidation' => 'Veuillez choisir une Wilaya.',
+    'regionValidation' => 'Veuillez choisir une Region.',
     'dairaValidation' => 'Veuillez choisir une Daira.',
     'pageDescription' => 'Une plateforme algérienne qui aide les personnes en besoin de sang à trouver des donneurs dans leur région',
 ];

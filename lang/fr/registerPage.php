@@ -10,7 +10,7 @@
 
 return [
     'title' => ':websiteTitle | Inscription en tant que donneur',
-    'wilaya' => 'Wilaya',
+    'region' => 'Region',
     'daira' => 'Daira',
     'phoneNumber' => 'Numéro de téléphone',
     'bloodGroup' => 'Groupe sanguin',
@@ -20,7 +20,7 @@ return [
     'register' => "S'inscrire",
     'alreadyMember' => 'Vous avez déjà un compte ?',
     'login' => 'se connecter',
-    'wilayaValidation' => 'Veuillez choisir une Wilaya!',
+    'regionValidation' => 'Veuillez choisir une Region!',
     'dairaValidation' => 'Veuillez choisir une Daira!',
     'phoneNumberValidation' => "S'il vous plaît entrez un numéro valid!",
     'bloodGroupValidation' => 'Veuillez choisir votre group sanguin!',

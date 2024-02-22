@@ -14,5 +14,5 @@ Route::group([
     'prefix' => LaravelLocalization::setLocale().'/api',
     'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath'],
 ], function () {
-    Route::get('/dairas/{wilayaCode}', [ApiController::class, 'getDairas']);
+    Route::get('/dairas/{regionCode}', [ApiController::class, 'getDairas']);
 });

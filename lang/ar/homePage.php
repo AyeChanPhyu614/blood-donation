@@ -20,10 +20,10 @@ return [
     'secondCtaBtn' => 'بحاجة الى الدم',
     'findDonors' => 'إبحث عن المتبرعين بالدم في منطقتك',
     'bloodGroup' => 'فصيلة الدم',
-    'wilaya' => 'الولاية',
+    'region' => 'الولاية',
     'daira' => 'الدائرة',
     'bloodGroupValidation' => 'الرجاء اختيار فصيلة الدم.',
-    'wilayaValidation' => 'الرجاء اختيار ولاية.',
+    'regionValidation' => 'الرجاء اختيار ولاية.',
     'dairaValidation' => 'الرجاء اختيار دائرة.',
     'pageDescription' => 'منصة جزائرية تساعد المحتاجين إلى الدم في العثور على المتبرعين في منطقتهم',
 ];

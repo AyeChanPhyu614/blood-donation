@@ -52,14 +52,14 @@
             </div>
 
             <div>
-                <label for="wilayaSelect" class="form-label mt-3">{{ __('homePage.wilaya') }}</label>
-                <select data-validator-func="wilayaValidator" name="wilaya" id="wilayaSelect" class="form-select" required>
-                    <option selected hidden style="display:none" value="">{{ __('homePage.wilaya') }}</option>
-                    @foreach ($wilayas as $wilaya)
-                        <option value="{{ $wilaya['id'] }}">{{ $wilaya['id'] . '. ' . $wilaya['name'] }} </option>
+                <label for="regionSelect" class="form-label mt-3">{{ __('homePage.region') }}</label>
+                <select data-validator-func="regionValidator" name="region" id="regionSelect" class="form-select" required>
+                    <option selected hidden style="display:none" value="">{{ __('homePage.region') }}</option>
+                    @foreach ($regions as $region)
+                        <option value="{{ $region['id'] }}">{{ $region['id'] . '. ' . $region['name'] }} </option>
                     @endforeach
                 </select>
-                <div class="invalid-feedback">{{ __('registerPage.wilayaValidation') }}</div>
+                <div class="invalid-feedback">{{ __('registerPage.regionValidation') }}</div>
             </div>
 
 

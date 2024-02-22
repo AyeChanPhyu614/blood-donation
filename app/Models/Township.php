@@ -7,31 +7,23 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
-class Wilaya extends Model
+class Daira extends Model
 {
-    protected $table = 'regions';
-
     use HasFactory;
 
+    protected $table = 'townships';
 
     public $timestamps = false;
 
-    public $incrementing = false;
-
     protected $fillable = [
-        'id',
         'name',
         'arName',
+        'region_id',
     ];
 
     public function users()
     {
         return $this->hasMany(User::class);
-    }
-
-    public function dairas()
-    {
-        return $this->hasMany(Daira::class);
     }
 
     protected function name(): Attribute
