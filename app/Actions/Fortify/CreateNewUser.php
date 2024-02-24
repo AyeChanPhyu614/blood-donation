@@ -30,7 +30,7 @@ class CreateNewUser implements CreatesNewUsers
             ],
             'phone' => ['required', 'numeric', 'digits:10', Rule::unique(User::class)],
             'region' => ['required', 'exists:regions,id'],
-            'township' => ['required', 'exists:townships,id'],
+            'township' => [ 'exists:townships,id'],
             'blood_group' => ['required', 'exists:blood_groups,id'],
             'password' => $this->passwordRules(),
             'g-recaptcha-response' => 'required|captcha',
@@ -44,7 +44,7 @@ class CreateNewUser implements CreatesNewUsers
             'email' => $input['email'],
             'phone' => $input['phone'],
             'region_id' => $input['region'],
-            'township_id' => $input['township'],
+            'township_id' => $input['township'] ?? 1,
             'blood_group_id' => $input['blood_group'],
             'password' => Hash::make($input['password']),
         ]);

@@ -63,14 +63,14 @@
             </div>
 
 
-            <div>
+            {{-- <div>
                 <label for="townshipSelect" class="form-label mt-3">{{ __('registerPage.township') }}</label>
                 <select data-validator-func="townshipValidator" name="township" id="townshipSelect" class="form-select" disabled
                     required>
                     <option selected hidden style="display:none" value="">{{ __('registerPage.township') }}</option>
                 </select>
                 <div class="invalid-feedback">{{ __('registerPage.townshipValidation') }}</div>
-            </div>
+            </div> --}}
 
             <div>
                 <label for="id_phone" class="form-label mt-3">{{ __('registerPage.phoneNumber') }}</label>
